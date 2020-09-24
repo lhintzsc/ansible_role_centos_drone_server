@@ -8,3 +8,7 @@ drone_volume: /var/lib/drone:/data
 drone_path: ~/drone
 drone_run: "{{ drone_path }}/docker_run_drone_server.sh"
 drone_env: "{{ drone_path }}/env.list"
+
+# docker 
+drone_docker_http_proxy: "{{ lookup('env','SECRET_LAB_HTTP_PROXY') }}"
+drone_docker_https_proxy: "{{ lookup('env','SECRET_LAB_HTTPS_PROXY') }}"
