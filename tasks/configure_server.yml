@@ -8,9 +8,7 @@
   template:
     src: '{{ item.src }}' 
     dest: '{{ item.dest }}' 
-    owner: root
-    group: root
-    mode: 'root'
+    mode: '{{ item.mode }}' 
   with_items:
-  - { src: 'docker_run_drone_server.sh.j2', dest: "{{ drone_run }}" }
-  - { src: 'env.list.j2', dest: "{{ drone_env }}" }
+  - { src: 'docker_run_drone_server.sh.j2', dest: "{{ drone_run }}", mode: "0744" }
+  - { src: 'env.list.j2', dest: "{{ drone_env }}", mode: "0664" }
