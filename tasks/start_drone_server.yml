@@ -1,0 +1,14 @@
+- name: start drone server
+  community.general.docker_container:
+    name: drone server
+    image: "{{ drone_server_image }}"
+    env_file: "{{ drone_env }}"
+    volumes:
+     - "{{ drone_volume }}"
+    ports:
+     - "80:80"
+     - "443:443"
+    restart_policy: always
+    state: started
+    restart: yes
+    detach: yes
