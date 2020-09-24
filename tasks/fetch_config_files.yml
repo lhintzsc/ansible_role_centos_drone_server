@@ -1,0 +1,8 @@
+- name: "Download files from remote to ansible host"
+  fetch:
+     src: "{{ item.src }}"
+    dest: "{{ item.dest}}"
+  with_items:
+   - { src: "{{ drone_run }}", dest: DEST }
+   - { src: "{{ drone_env }}", dest: DEST }
+# https://docs.ansible.com/ansible/latest/modules/fetch_module.html

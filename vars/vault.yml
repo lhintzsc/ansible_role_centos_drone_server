@@ -1,4 +1,4 @@
-drone_server_image: drone/drone:1
+drone_server_image: "drone/drone:1"
 drone_github_client_id: "{{ lookup('env','SECRET_DRONE_GITHUB_CLIENT_ID') }}"
 drone_github_client_secret: "{{ lookup('env','SECRET_DRONE_GITHUB_CLIENT_SECRET') }}"
 drone_rpc_secret: "{{ lookup('env','SECRET_DRONE_RPC_SECRET') }}"
