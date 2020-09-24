@@ -10,4 +10,5 @@ drone_volume: /var/lib/drone:/data
 drone_path: ~/drone
 drone_run: "{{ drone_path }}/docker_run_drone_server.sh"
 drone_env: "{{ drone_path }}/env.list"
+drone_file_pull: "./files"
 

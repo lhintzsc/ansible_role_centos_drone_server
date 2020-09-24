@@ -3,6 +3,6 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest}}"
   with_items:
-   - { src: "{{ drone_run }}", dest: DEST }
-   - { src: "{{ drone_env }}", dest: DEST }
+   - { src: "{{ drone_run }}", dest: "{{ drone_file_pull }}" }
+   - { src: "{{ drone_env }}", dest: "{{ drone_file_pull }}" }
 # https://docs.ansible.com/ansible/latest/modules/fetch_module.html
