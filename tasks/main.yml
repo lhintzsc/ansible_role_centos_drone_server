@@ -1,0 +1,3 @@
+---
+# tasks file for centos_drone_server
+- include_tasks: install_packages.yml

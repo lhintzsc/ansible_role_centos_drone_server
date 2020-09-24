@@ -1,0 +1,16 @@
+- name: "Create {{ drone_path }} if it does not exist"
+  file:
+    path: '{{ drone_path }}'
+    recurse: yes
+    state: directory
+
+- name: "Copy templates to destination"
+  template:
+    src: '{{ item.src }}' 
+    dest: '{{ item.dest }}' 
+    owner: root
+    group: root
+    mode: 'root'
+  with_items:
+  - { src: 'docker_run_drone_server.sh.j2', dest: "{{ drone_run }}" }
+  - { src: 'env.list.j2', dest: "{{ drone_env }}" }
